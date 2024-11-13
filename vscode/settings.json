@@ -1,0 +1,91 @@
+{
+  "security.allowedUNCHosts": ["wsl.localhost"],
+  "vsicons.dontShowNewVersionMessage": true,
+  "workbench.startupEditor": "none",
+
+  // Typography
+  "editor.fontFamily": "Geist Mono, Fira Code, JetBrains Mono, Consolas, Courier New, monospace",
+  "editor.fontSize": 20,
+  "editor.lineHeight": 1.5,
+  "terminal.integrated.fontSize": 16,
+  "editor.fontLigatures": true,
+
+  // Theme
+  "workbench.colorTheme": "Nord Deep",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.activityBar.location": "hidden",
+  "workbench.colorCustomizations": {
+    "editorBracketMatch.border": "#52525b",
+    "editorBracketMatch.background": "#52525b"
+  },
+  "workbench.statusBar.visible": false,
+  "workbench.tips.enabled": false,
+  "workbench.editor.showTabs": "none",
+  "workbench.sideBar.location": "right",
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.verticalScrollbarSize": 10,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 160,
+  "editor.minimap.enabled": false,
+  "editor.smoothScrolling": true,
+  "window.menuBarVisibility": "hidden",
+  "window.commandCenter": false,
+  "window.newWindowDimensions": "inherit",
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "breadcrumbs.enabled": false,
+  "editor.gotoLocation.multipleReferences": "goto",
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "editor.gotoLocation.multipleDeclarations": "goto",
+  "editor.gotoLocation.multipleImplementations": "goto",
+  "editor.gotoLocation.multipleTypeDefinitions": "goto",
+  "editor.guides.indentation": false,
+
+  // Formatters & langauge-specific settings
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+
+  "files.associations": {
+    "*.pcss": "scss",
+    "*.css": "css",
+    "*.jsx": "javascriptreact"
+  },
+
+  "[typescript]": {
+    "editor.parameterHints.enabled": true
+  },
+  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma",
+    "editor.formatOnSave": true
+  },
+  "[c]": {
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+  },
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "cmake.showOptionsMovedNotification": false,
+
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "[markdown]": {
+    "editor.tabSize": 2
+  },
+
+  // misc
+  "search.useIgnoreFiles": true,
+  "search.exclude": {
+    "**/node_modules": true
+  },
+  "extensions.ignoreRecommendations": true,
+  "git.openRepositoryInParentFolders": "never",
+  "code-runner.runInTerminal": true,
+  "security.workspace.trust.untrustedFiles": "open"
+}
