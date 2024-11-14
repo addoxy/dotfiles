@@ -6,6 +6,7 @@ alias py='python3'
 alias python='python3'
 
 alias zshrc="nano ~/.zshrc"
+alias alias-zsh="nano ~/.alias.zsh"
 alias reload="source ~/.zshrc"
 
 alias gitx=_gitx
