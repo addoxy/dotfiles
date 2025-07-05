@@ -1,65 +1,109 @@
 {
-  "security.allowedUNCHosts": ["wsl.localhost"],
-  "vsicons.dontShowNewVersionMessage": true,
+  // No welcome screen or untitled file on startup
   "workbench.startupEditor": "none",
 
   // Typography
-  "editor.fontFamily": "Geist Mono, Fira Code, JetBrains Mono, Consolas, Courier New, monospace",
+  "editor.fontFamily": "SF Mono, Geist Mono, Fira Code, JetBrains Mono, Consolas, Courier New, monospace",
   "editor.fontSize": 20,
   "editor.lineHeight": 1.5,
-  "terminal.integrated.fontSize": 16,
   "editor.fontLigatures": true,
+  "terminal.integrated.fontSize": 16,
+  "vsicons.dontShowNewVersionMessage": true,
 
-  // Theme
-  "workbench.colorTheme": "Nord Deep",
+  // Theme & UI Customizations
+  "workbench.colorTheme": "Minimal",
   "workbench.iconTheme": "vscode-icons",
   "workbench.activityBar.location": "hidden",
+  "workbench.statusBar.visible": false,
+  "workbench.tips.enabled": false,
+  "workbench.sideBar.location": "right",
   "workbench.colorCustomizations": {
+    // Color for bracket matching
     "editorBracketMatch.border": "#52525b",
     "editorBracketMatch.background": "#52525b"
   },
-  "workbench.statusBar.visible": false,
-  "workbench.tips.enabled": false,
-  "workbench.editor.showTabs": "none",
-  "workbench.sideBar.location": "right",
-  "editor.scrollbar.horizontal": "hidden",
-  "editor.scrollbar.verticalScrollbarSize": 10,
-  "editor.cursorSmoothCaretAnimation": "on",
-  "editor.wordWrap": "wordWrapColumn",
-  "editor.wordWrapColumn": 160,
-  "editor.minimap.enabled": false,
-  "editor.smoothScrolling": true,
-  "window.menuBarVisibility": "hidden",
+  "window.titleBarStyle": "native",
   "window.commandCenter": false,
   "window.newWindowDimensions": "inherit",
+  "workbench.layoutControl.enabled": false,
+
+  // UI Cleanup & Minimalism
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.verticalScrollbarSize": 10,
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
-  "breadcrumbs.enabled": false,
+
+  // Navigation & Go-To Settings
   "editor.gotoLocation.multipleReferences": "goto",
   "editor.gotoLocation.multipleDefinitions": "goto",
   "editor.gotoLocation.multipleDeclarations": "goto",
   "editor.gotoLocation.multipleImplementations": "goto",
   "editor.gotoLocation.multipleTypeDefinitions": "goto",
-  "editor.guides.indentation": false,
 
-  // Formatters & langauge-specific settings
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // Editor Behavior
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 88,
+  "editor.smoothScrolling": true,
+  "editor.guides.indentation": false,
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
 
+  // Token Colors (for string templates and interpolations)
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        // Color for full template string (e.g., `bg-${customColor}`)
+        "scope": "string.template",
+        "settings": {
+          "foreground": "#8FAED3"
+        }
+      },
+      {
+        // Color for the opening ${ in template strings
+        "scope": "punctuation.definition.template-expression.begin",
+        "settings": {
+          "foreground": "#FF79C6"
+        }
+      },
+      {
+        // Color for the closing } in template strings
+        "scope": "punctuation.definition.template-expression.end",
+        "settings": {
+          "foreground": "#FF79C6"
+        }
+      },
+      {
+        // Color for variables inside ${...}
+        "scope": [
+          "meta.template.expression",
+          "meta.embedded.line",
+          "variable.other.readwrite"
+        ],
+        "settings": {
+          "foreground": "#E6E6E6"
+        }
+      }
+    ]
+  },
+
+  // File Type Associations
   "files.associations": {
     "*.pcss": "scss",
     "*.css": "css",
     "*.jsx": "javascriptreact"
   },
 
+  // Language-Specific Formatting & Tooling
   "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.parameterHints.enabled": true
   },
-  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "javascript.updateImportsOnFileMove.enabled": "always",
-
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma",
     "editor.formatOnSave": true
@@ -68,24 +112,63 @@
     "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
   },
   "[cpp]": {
-    "editor.defaultFormatter": "ms-vscode.cpptools"
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
   },
-  "cmake.showOptionsMovedNotification": false,
-
   "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter"
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit"
+    }
   },
   "[markdown]": {
     "editor.tabSize": 2
   },
-
-  // misc
-  "search.useIgnoreFiles": true,
-  "search.exclude": {
-    "**/node_modules": true
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // Extensions and Miscellaneous Settings
   "extensions.ignoreRecommendations": true,
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
   "git.openRepositoryInParentFolders": "never",
   "code-runner.runInTerminal": true,
-  "security.workspace.trust.untrustedFiles": "open"
+  "security.workspace.trust.untrustedFiles": "open",
+
+  // Python Environment
+  "python.defaultInterpreterPath": "/opt/homebrew/Caskroom/miniconda/base/envs/adden",
+
+  // Custom UI Styles (centered command palette and drag regions)
+  "custom-ui-style.electron": {
+    "frame": false
+  },
+  "custom-ui-style.stylesheet": {
+    // Center the command palette
+    ".quick-input-widget": "top: 30vh !important; left: 50% !important; transform: translateX(-50%) !important;",
+
+    // Allow window dragging on bare zones
+    ".monaco-workbench": {
+      "&:not(.fullscreen)": {
+        ".activitybar, .statusbar, .tabs-container, .sidebar .composite.title": {
+          "-webkit-app-region": "drag",
+          ".content .monaco-action-bar, .statusbar-item, .tab, .title .title-actions .action-label": {
+            "-webkit-app-region": "no-drag"
+          }
+        }
+      }
+    }
+  },
+
+  // Disable automatic updates
+  "update.mode": "none"
 }
